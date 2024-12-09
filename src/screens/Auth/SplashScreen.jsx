@@ -13,10 +13,9 @@ const SplashScreen = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      navigation.navigate('Welcome'); // Navigate to Welcome after 3 seconds
+      navigation.navigate('Welcome');
     }, 3000);
 
-    // Clear the timeout if the component unmounts to avoid memory leaks
     return () => clearTimeout(timeout);
   }, [navigation]);
 
