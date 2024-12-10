@@ -24,6 +24,7 @@ export default function Slider() {
     <View style={styles.container}>
       <FlatList
         horizontal
+        bounces
         data={images}
         renderItem={({item, index, separators}) => {
           return (

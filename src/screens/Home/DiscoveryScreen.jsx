@@ -10,11 +10,15 @@ import React from 'react';
 import Slider from '../../components/Slider';
 import FireIcon from 'react-native-vector-icons/Fontisto';
 import HandClap from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Bold, SemiBold} from '../../constants/fonts';
+import {SemiBold} from '../../constants/fonts';
+import ItemSlider from '../../components/ItemSlider';
 
 export default function DiscoveryScreen() {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      style={styles.container}>
       <Slider />
       <View style={styles.cardcontainer}>
         {/* Fastest Delivery */}
@@ -43,36 +47,40 @@ export default function DiscoveryScreen() {
             </Text>
           </TouchableOpacity>
         </View>
-      </View>
-      {/* end */}
 
-      {/* popular items */}
-      <View style={styles.cardheader}>
-        <Text>
-          Popular Items
-          <HandClap name="hand-clap" size={15} color="#fbca46" />
-        </Text>
-        <TouchableOpacity
-          style={{
-            backgroundColor: '#fed8cc',
-            width: 70,
-            height: 30,
-            alignItems: 'center',
-            borderRadius: 15,
-            alignContent: 'center',
-            justifyContent: 'center',
-          }}>
-          <Text
-            style={{
-              color: '#f8440e',
-              textAlign: 'center',
-              fontFamily: SemiBold,
-            }}>
-            See All
+        <ItemSlider />
+
+        {/* end */}
+
+        {/* popular items */}
+        <View style={styles.cardheader}>
+          <Text>
+            Popular Items
+            <HandClap name="hand-clap" size={15} color="#fbca46" />
           </Text>
-        </TouchableOpacity>
-      </View>
-
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#fed8cc',
+              width: 70,
+              height: 30,
+              alignItems: 'center',
+              borderRadius: 15,
+              alignContent: 'center',
+              justifyContent: 'center',
+            }}>
+            <Text
+              style={{
+                color: '#f8440e',
+                textAlign: 'center',
+                fontFamily: SemiBold,
+              }}>
+              See All
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <ItemSlider />
+      </View>{' '}
+      <ItemSlider />
       {/* end */}
     </ScrollView>
   );
