@@ -34,6 +34,9 @@
 		814C209A0F194DAC8DE993C0 /* googlelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D487233717B41D096F35374 /* googlelogo.png */; };
 		2591E00E275448B0A008B0A3 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D1F7258AB03489A8663DA7F /* splash.png */; };
 		3802D7E0EFF84F809EABC75C /* welcomescreenbackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EFA3DE62DABE43E0BB3ACA91 /* welcomescreenbackground.jpg */; };
+		CF5FFF5AC29442D1A6696B5F /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = E8A837A8272141F8983C7583 /* fire.png */; };
+		3B45197512C2450DBF81C219 /* slider1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E050292ECC05493682897EA6 /* slider1.jpg */; };
+		8990D4816B2F426CBB1830C4 /* slider2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24A7DF8EC24E4E7B80DA43EE /* slider2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		5D487233717B41D096F35374 /* googlelogo.png */ = {isa = PBXFileReference; name = "googlelogo.png"; path = "../assets/images/googlelogo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0D1F7258AB03489A8663DA7F /* splash.png */ = {isa = PBXFileReference; name = "splash.png"; path = "../assets/images/splash.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		EFA3DE62DABE43E0BB3ACA91 /* welcomescreenbackground.jpg */ = {isa = PBXFileReference; name = "welcomescreenbackground.jpg"; path = "../assets/images/welcomescreenbackground.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E8A837A8272141F8983C7583 /* fire.png */ = {isa = PBXFileReference; name = "fire.png"; path = "../assets/images/fire.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E050292ECC05493682897EA6 /* slider1.jpg */ = {isa = PBXFileReference; name = "slider1.jpg"; path = "../assets/images/slider1.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		24A7DF8EC24E4E7B80DA43EE /* slider2.jpg */ = {isa = PBXFileReference; name = "slider2.jpg"; path = "../assets/images/slider2.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +220,9 @@
 				5D487233717B41D096F35374 /* googlelogo.png */,
 				0D1F7258AB03489A8663DA7F /* splash.png */,
 				EFA3DE62DABE43E0BB3ACA91 /* welcomescreenbackground.jpg */,
+				E8A837A8272141F8983C7583 /* fire.png */,
+				E050292ECC05493682897EA6 /* slider1.jpg */,
+				24A7DF8EC24E4E7B80DA43EE /* slider2.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -334,6 +343,9 @@
 				814C209A0F194DAC8DE993C0 /* googlelogo.png in Resources */,
 				2591E00E275448B0A008B0A3 /* splash.png in Resources */,
 				3802D7E0EFF84F809EABC75C /* welcomescreenbackground.jpg in Resources */,
+				CF5FFF5AC29442D1A6696B5F /* fire.png in Resources */,
+				3B45197512C2450DBF81C219 /* slider1.jpg in Resources */,
+				8990D4816B2F426CBB1830C4 /* slider2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

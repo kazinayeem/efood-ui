@@ -7,7 +7,11 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import {LoginWithFaceBook, LoginWithGoogle} from '../../components/Button';
+import {
+  BigButton,
+  LoginWithFaceBook,
+  LoginWithGoogle,
+} from '../../components/Button';
 import {WELCOME_BG} from '../../constants/images';
 import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../constants/colors';
@@ -46,13 +50,12 @@ const WelcomeScreen = () => {
               </Text>
             </View>
 
-            <TouchableOpacity
-              style={styles.swesection}
-              onPress={() => {
-                navigation.navigate('Login');
-              }}>
-              <Text style={styles.swetext}>Start with Email</Text>
-            </TouchableOpacity>
+            <BigButton
+              title={'Start with Email'}
+              action={navigation.navigate}
+              actionTitle={'Login'}
+              bg={'black'}
+            />
 
             <View style={styles.siwcontainer}>
               <View style={styles.line} />
@@ -77,7 +80,7 @@ const WelcomeScreen = () => {
 
 export default WelcomeScreen;
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
@@ -114,20 +117,6 @@ const styles = StyleSheet.create({
     color: '#595C6F',
     fontFamily: Regular,
   },
-  swesection: {
-    width: '99%',
-    height: 50,
-    borderRadius: 20,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  swetext: {
-    color: '#ffff',
-    fontSize: 14,
-    fontFamily: Regular,
-    textAlign: 'center',
-  },
   line: {
     width: '30%',
     height: 2,
@@ -145,7 +134,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     width: '99%',
   },
 });

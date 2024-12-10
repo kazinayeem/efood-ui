@@ -70,8 +70,20 @@
       "sha1": "78829841e4ba99cae5ee3e66c382eee9adab9e1c"
     },
     {
+      "path": "assets/images/fire.png",
+      "sha1": "cda7c558c01a9ea14a8587bf64d0be7d8ce99720"
+    },
+    {
       "path": "assets/images/googlelogo.png",
       "sha1": "6014b520b551e93a59c86e9eaf09d77156cc3235"
+    },
+    {
+      "path": "assets/images/slider1.jpg",
+      "sha1": "dad68371a341aa2f1959651423a3e8ef49a2fa21"
+    },
+    {
+      "path": "assets/images/slider2.jpg",
+      "sha1": "d2ca748320055fd2b5f1355bb6846e53e2ab1b53"
     },
     {
       "path": "assets/images/splash.png",

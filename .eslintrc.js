@@ -1,5 +1,7 @@
 module.exports = {
   root: true,
   extends: '@react-native',
-  rules: {'prettier/prettier': 0},
+  rules: {
+    'react-native/no-inline-styles': 'off', // Disable the inline styles rule
+  },
 };
