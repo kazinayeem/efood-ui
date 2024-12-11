@@ -17,13 +17,13 @@ const generateRandomDiscount = () =>
 
 function ItemSlider({w, h, data, discount}) {
   const renderItem = ({item}) => (
-    <View style={styles.itemContainer}>
+    <View style={[styles.itemContainer]}>
       {/* Image and Discount Badge */}
       <View style={styles.imageWrapper}>
         <Image
           source={{uri: item.image}}
           style={styles.itemImage}
-          resizeMode="contain"
+          resizeMode="cover"
         />
         {discount && (
           <TouchableOpacity style={styles.discountBadge}>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 200,
     backgroundColor: COLORS.background,
-    width: 270,
+    width: '95%',
     marginHorizontal: 10,
     borderRadius: 10,
     elevation: 3,
@@ -98,10 +98,10 @@ const styles = StyleSheet.create({
   discountBadge: {
     position: 'absolute',
     right: 5,
-    bottom: 5,
+    bottom: 10,
     backgroundColor: COLORS.orange,
     borderRadius: 5,
-    padding: 5,
+    padding: 3,
   },
   discountText: {
     fontFamily: Regular,

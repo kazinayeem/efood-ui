@@ -8,7 +8,7 @@ export const foodItems = [
     price: 12.99,
     rating: 4.5,
     image:
-      'https://i.ibb.co.com/XLzYDM5/Pngtree-sausage-cheese-pizza-slice-three-dimensional-13137250.png', // Valid Link
+      'https://img.freepik.com/free-photo/real-food-pyramid-assortment-top-view_23-2150238927.jpg', // Valid Link
   },
   {
     id: 2,

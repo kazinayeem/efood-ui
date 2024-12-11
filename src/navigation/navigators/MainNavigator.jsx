@@ -1,5 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable react/no-unstable-nested-components */
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
 import React, {useState} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -16,7 +14,7 @@ import Icon1 from 'react-native-vector-icons/SimpleLineIcons';
 import Icon2 from 'react-native-vector-icons/Ionicons';
 import Icon3 from 'react-native-vector-icons/FontAwesome5';
 import {Colors} from '../../constants/colors';
-import {BlurView} from '@react-native-community/blur';
+
 
 // sd
 const Tab = createBottomTabNavigator();
@@ -134,10 +132,9 @@ const DiscoveryStack = () => {
           headerShadowVisible: false,
           headerLeft: () => (
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <Text>Home, </Text>
+              <Text>Home,</Text>
               <Text>Jl. Soekarno Hatte 15A</Text>
               <SectionedMultiSelect
-                loading={true}
                 items={items}
                 IconRenderer={Icon}
                 uniqueKey="id"
