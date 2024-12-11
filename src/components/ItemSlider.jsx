@@ -54,7 +54,7 @@ function ItemSlider({w, h, data, discount}) {
         </View>
       </View>
     </View>
-  );
+  ); 
 
   return (
     <View style={[styles.sliderContainer]}>

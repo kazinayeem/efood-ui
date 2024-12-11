@@ -70,10 +70,6 @@
       "sha1": "78829841e4ba99cae5ee3e66c382eee9adab9e1c"
     },
     {
-      "path": "assets/images/fire.png",
-      "sha1": "cda7c558c01a9ea14a8587bf64d0be7d8ce99720"
-    },
-    {
       "path": "assets/images/googlelogo.png",
       "sha1": "6014b520b551e93a59c86e9eaf09d77156cc3235"
     },
@@ -84,6 +80,18 @@
     {
       "path": "assets/images/slider2.jpg",
       "sha1": "d2ca748320055fd2b5f1355bb6846e53e2ab1b53"
+    },
+    {
+      "path": "assets/images/slider3.jpg",
+      "sha1": "b6fdc62f1d5d30142d141df97274cf5a64d98e73"
+    },
+    {
+      "path": "assets/images/slider4.jpg",
+      "sha1": "3587ef3ecebc65d301c4bacf2d6d1ef3da8f6c40"
+    },
+    {
+      "path": "assets/images/slider5.jpg",
+      "sha1": "947c78c39cee6eab9b8fb3637265d11e4065eb21"
     },
     {
       "path": "assets/images/splash.png",
