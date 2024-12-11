@@ -12,6 +12,7 @@ import FireIcon from 'react-native-vector-icons/Fontisto';
 import HandClap from 'react-native-vector-icons/MaterialCommunityIcons';
 import {SemiBold} from '../../constants/fonts';
 import ItemSlider from '../../components/ItemSlider';
+import {foodItems} from '../../config/data';
 
 export default function DiscoveryScreen() {
   return (
@@ -47,8 +48,8 @@ export default function DiscoveryScreen() {
             </Text>
           </TouchableOpacity>
         </View>
-
-        <ItemSlider />
+        <View style={{width: 0, height: 0, marginBottom: 15}} />
+        <ItemSlider data={foodItems} discount={true}  />
 
         {/* end */}
 
@@ -78,9 +79,8 @@ export default function DiscoveryScreen() {
             </Text>
           </TouchableOpacity>
         </View>
-        <ItemSlider />
-      </View>{' '}
-      <ItemSlider />
+      </View>
+      <ItemSlider data={foodItems} discount={false} />
       {/* end */}
     </ScrollView>
   );
@@ -104,5 +104,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 10,
+    marginBottom: 0,
   },
 });
