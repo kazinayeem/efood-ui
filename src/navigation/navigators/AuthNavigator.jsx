@@ -1,5 +1,5 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from '../../screens/Auth/SplashScreen';
 import WelcomeScreen from '../../screens/Auth/WelcomeScreen';
 import LoginScreen from '../../screens/Auth/LoginScreen';
@@ -12,8 +12,13 @@ const AuthStack = createNativeStackNavigator();
 
 const AuthNavigator = () => (
   <AuthStack.Navigator
-    screenOptions={{headerShown: false}}
-    initialRouteName="MainNavigator">
+    screenOptions={{
+      headerShown: false,
+      presentation: 'transparentModal', // Works cross-platform for modal-like behavior
+      animation: 'fade',               // Global animation style
+    }}
+    initialRouteName="Splash"
+  >
     <AuthStack.Screen name="Splash" component={SplashScreen} />
     <AuthStack.Screen name="Welcome" component={WelcomeScreen} />
     <AuthStack.Screen name="Login" component={LoginScreen} />
@@ -22,8 +27,11 @@ const AuthNavigator = () => (
     <AuthStack.Screen
       name="VerificationCode"
       component={VerificationCodeScreen}
+      options={{
+        presentation: 'modal',        // Override to modal
+        animation: 'slide_from_bottom', // Mimics iOS modal behavior
+      }}
     />
-
     <AuthStack.Screen name="MainNavigator" component={MainNavigator} />
   </AuthStack.Navigator>
 );

@@ -4,7 +4,6 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  Image,
 } from 'react-native';
 import React from 'react';
 import Slider from '../../components/Slider';
@@ -49,7 +48,7 @@ export default function DiscoveryScreen() {
           </TouchableOpacity>
         </View>
         <View style={{width: 0, height: 0, marginBottom: 15}} />
-        <ItemSlider data={foodItems} discount={true}  />
+        <ItemSlider data={foodItems} discount={true} />
 
         {/* end */}
 

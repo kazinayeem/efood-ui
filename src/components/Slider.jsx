@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, Text, Dimensions, StyleSheet} from 'react-native';
+import {View, Image, Dimensions, StyleSheet} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import {SLIDER1, SLIDER2, SLIDER3, SLIDER4, SLIDER5} from '../constants/images'; // Adjust image paths
 
@@ -14,12 +14,12 @@ export default function MyCarousel() {
       <Carousel
         pagingEnabled
         loop
-        width={width} // Set the width to be the screen width
-        height={width / 2} // Set the height to half the screen width
-        autoPlay={true} // Enable autoPlay to automatically scroll
-        data={images} // Use the images array for the carousel
-        scrollAnimationDuration={1000} // Duration of the scroll animation
-        // onSnapToItem={index => console.log('Current index:', index)} // Log current index on snap
+        width={width}
+        height={width / 2}
+        autoPlay={true}
+        data={images}
+        scrollAnimationDuration={1000}
+        // onSnapToItem={index => console.log('Current index:', index)}
         renderItem={({index, item}) => (
           <View style={styles.carouselItem}>
             <Image source={item} style={styles.carouselImage} />
