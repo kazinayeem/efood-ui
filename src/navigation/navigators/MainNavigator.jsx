@@ -22,7 +22,7 @@ const Stack = createNativeStackNavigator();
 const items = [
   {name: 'Cars', id: 1},
   {name: 'Vans', id: 2},
-  {name: 'SUVs', id: 3},
+  
 ];
 
 const MainNavigator = () => (

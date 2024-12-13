@@ -14,8 +14,8 @@ const AuthNavigator = () => (
   <AuthStack.Navigator
     screenOptions={{
       headerShown: false,
-      presentation: 'transparentModal', // Works cross-platform for modal-like behavior
-      animation: 'fade',               // Global animation style
+      presentation: 'transparentModal',
+      animation: 'fade',
     }}
     initialRouteName="Splash"
   >
