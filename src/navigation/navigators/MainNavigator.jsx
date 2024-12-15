@@ -26,7 +26,7 @@ const items = [
 
 const MainNavigator = () => (
   <Tab.Navigator
-    // initialRouteName="Restaurants"
+    initialRouteName="Favorite"
     screenOptions={{
       headerShown: false,
       tabBarStyle: {
@@ -39,7 +39,6 @@ const MainNavigator = () => (
         borderRadius: 20,
         bottom: 10,
       },
-
       tabBarActiveTintColor: '#FF4500', // Active item color
       tabBarInactiveTintColor: '#333', // Inactive item color
     }}>
