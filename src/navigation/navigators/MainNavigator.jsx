@@ -7,7 +7,7 @@ import FavoriteScreen from '../../screens/Home/FavoriteScreen';
 import DiscoveryScreen from '../../screens/Home/DiscoveryScreen';
 import FoodDetailsScreen from '../../screens/Home/foodDetails/FoodDetailsScreen';
 import Resturantscreen from '../../screens/Home/resturent/Resturantscreen';
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon1 from 'react-native-vector-icons/SimpleLineIcons';
 import Icon2 from 'react-native-vector-icons/Ionicons';
@@ -21,7 +21,7 @@ const Stack = createNativeStackNavigator();
 
 const MainNavigator = () => (
   <Tab.Navigator
-    initialRouteName={__DEV__ ? 'Profile' : 'Discovery'}
+    // initialRouteName={'Profile'}
     screenOptions={{
       headerShown: false,
       tabBarStyle: {
@@ -102,6 +102,25 @@ const MainNavigator = () => (
       name="Profile"
       component={OrderNavigator}
       options={({navigation, route}) => ({
+        tabBarStyle: {display: 'none'},
+        headerShown: true,
+        headerTitle: '',
+        headerTransparent: true,
+        headerLeft: () => (
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={{
+              backgroundColor: '#7c7c81',
+              marginLeft: 15,
+              width: 35,
+              height: 35,
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: 50,
+            }}>
+            <Icon3 name="arrow-left" size={22} color={'white'} />
+          </TouchableOpacity>
+        ),
         tabBarIcon: ({focused}) => {
           return (
             <Icon3

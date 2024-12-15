@@ -8,11 +8,17 @@ const OrderStack = createNativeStackNavigator();
 
 const OrderNavigator = () => (
   <OrderStack.Navigator screenOptions={{headerShown: false}}>
-    <OrderStack.Screen name="Profile" component={ProfileScreen} />
+    <OrderStack.Screen name="MainProfile" component={ProfileScreen} />
     <OrderStack.Screen
       name="Order"
       component={OrderScreen}
-      options={{headerShown: true}}
+      options={{
+        headerShown: true,
+        title: 'Your Order',
+        headerTitleAlign: 'center',
+        headerShadowVisible: false,
+        headerTransparent: false,
+      }}
     />
     <OrderStack.Screen name="DeliveryMap" component={MapScreen} />
   </OrderStack.Navigator>

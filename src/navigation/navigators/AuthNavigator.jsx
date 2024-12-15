@@ -9,7 +9,7 @@ import VerificationCodeScreen from '../../screens/Auth/VerificationCodeScreen';
 import MainNavigator from './MainNavigator';
 
 const AuthStack = createNativeStackNavigator();
-const dev = __DEV__;
+// const dev = __DEV__;
 
 const AuthNavigator = () => (
   <AuthStack.Navigator
@@ -17,7 +17,8 @@ const AuthNavigator = () => (
       headerShown: false,
       animation: 'slide_from_left',
     }}
-    initialRouteName={dev ? 'MainNavigator' : 'SplashScreen'}>
+    // initialRouteName={'MainNavigator'}
+    >
     <AuthStack.Screen name="Splash" component={SplashScreen} />
     <AuthStack.Screen name="Welcome" component={WelcomeScreen} />
     <AuthStack.Screen name="Login" component={LoginScreen} />

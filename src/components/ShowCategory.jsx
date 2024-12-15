@@ -10,15 +10,17 @@ import Animated, {
   FadeOut,
 } from 'react-native-reanimated';
 
-export default function ShowCategory({data}) {
+export default function ShowCategory({data, header = true}) {
   return (
     <Animated.View entering={FadeIn} exiting={FadeOut} style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headertext}>Categories</Text>
-        <TouchableOpacity style={styles.headerbtn}>
-          <Text style={styles.btntext}>See all</Text>
-        </TouchableOpacity>
-      </View>
+      {header && (
+        <View style={styles.header}>
+          <Text style={styles.headertext}>Categories</Text>
+          <TouchableOpacity style={styles.headerbtn}>
+            <Text style={styles.btntext}>See all</Text>
+          </TouchableOpacity>
+        </View>
+      )}
 
       <FlashList
         data={data}
