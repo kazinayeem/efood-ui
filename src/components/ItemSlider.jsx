@@ -5,7 +5,14 @@ import Star from 'react-native-vector-icons/AntDesign';
 import Time from 'react-native-vector-icons/MaterialIcons';
 import Car from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Bold, Regular} from '../constants/fonts';
-
+import Animated, {
+  FadeIn,
+  FadeInLeft,
+  FadeOut,
+  FadingTransition,
+  SlideInLeft,
+  SlideInUp,
+} from 'react-native-reanimated';
 const COLORS = {
   orange: '#fe8800',
   background: '#f9f9f9',
@@ -17,7 +24,9 @@ const generateRandomDiscount = () =>
 
 function ItemSlider({data, discount, Positionhorizontal}) {
   const renderItem = ({item}) => (
-    <View
+    <Animated.View
+      entering={FadeIn.duration(1000)}
+      exiting={FadeOut.duration(1000)}
       style={[styles.itemContainer, {height: Positionhorizontal ? 200 : 210}]}>
       {/* Image and Discount Badge */}
       <View style={styles.imageWrapper}>
@@ -54,7 +63,7 @@ function ItemSlider({data, discount, Positionhorizontal}) {
           <Star name="star" size={15} color={COLORS.orange} />
         </View>
       </View>
-    </View>
+    </Animated.View>
   );
 
   return (
@@ -64,12 +73,13 @@ function ItemSlider({data, discount, Positionhorizontal}) {
         {height: Positionhorizontal ? 210 : '100%'},
       ]}>
       <FlashList
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
         horizontal={Positionhorizontal}
         data={data}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
         estimatedItemSize={200}
-        showsHorizontalScrollIndicator={false}
       />
     </View>
   );

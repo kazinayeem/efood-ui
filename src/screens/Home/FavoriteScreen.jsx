@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import Animated, {BounceIn, BounceOut} from 'react-native-reanimated';
 import {Colors} from '../../constants/colors';
@@ -13,6 +7,7 @@ import ItemSlider from '../../components/ItemSlider';
 import {categories, foodItems} from '../../config/data';
 import ShowCategory from '../../components/ShowCategory';
 import {Bold} from '../../constants/fonts';
+
 export default function FavoriteScreen() {
   const [isActive, setisActive] = useState(1);
 
@@ -54,9 +49,7 @@ export default function FavoriteScreen() {
           entering={BounceIn}
           exiting={BounceOut}
           style={[styles.btn, isActive === 2 && styles.activebtn]}>
-          <TouchableOpacity
-            style={[styles.btn, isActive === 2 && styles.activebtn]}
-            onPress={() => changeActivebtn(2)}>
+          <TouchableOpacity onPress={() => changeActivebtn(2)}>
             <Text style={[styles.text, isActive === 2 && styles.activetext]}>
               Restaurant
             </Text>

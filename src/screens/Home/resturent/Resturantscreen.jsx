@@ -33,7 +33,7 @@ export default function Resturantscreen() {
       <ItemSlider
         Positionhorizontal={false}
         data={foodItems}
-        discount={false}
+        discount={true}
       />
       {/* <AllRestaurant data={foodItems} /> */}
     </ScrollView>

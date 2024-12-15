@@ -3,10 +3,16 @@ import React from 'react';
 import {FlashList} from '@shopify/flash-list';
 import {Bold, Regular} from '../constants/fonts';
 import {Colors} from '../constants/colors';
+import Animated, {
+  FadeIn,
+  FadeInLeft,
+  FadeInRight,
+  FadeOut,
+} from 'react-native-reanimated';
 
 export default function ShowCategory({data}) {
   return (
-    <View style={styles.container}>
+    <Animated.View entering={FadeIn} exiting={FadeOut} style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headertext}>Categories</Text>
         <TouchableOpacity style={styles.headerbtn}>
@@ -18,11 +24,16 @@ export default function ShowCategory({data}) {
         data={data}
         horizontal
         estimatedItemSize={2000}
+        showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         keyExtractor={item => item.id}
         renderItem={({item, index}) => {
           return (
-            <View key={index} style={styles.itemcontainer}>
+            <Animated.View
+              entering={FadeInLeft.duration(1000)}
+              exiting={FadeInRight.duration(1000)}
+              key={index}
+              style={styles.itemcontainer}>
               <View style={styles.imagecontainer}>
                 <Image
                   width={'100%'}
@@ -34,11 +45,11 @@ export default function ShowCategory({data}) {
 
               <Text style={styles.titletext}>{item.name}</Text>
               <Text style={styles.count_text}>{item.items.length} places</Text>
-            </View>
+            </Animated.View>
           );
         }}
       />
-    </View>
+    </Animated.View>
   );
 }
 

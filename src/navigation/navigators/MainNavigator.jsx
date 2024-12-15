@@ -19,14 +19,10 @@ import {Colors} from '../../constants/colors';
 // sd
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
-const items = [
-  {name: 'Cars', id: 1},
-  {name: 'Vans', id: 2},
-];
 
 const MainNavigator = () => (
   <Tab.Navigator
-    initialRouteName="Favorite"
+    initialRouteName={__DEV__ ? 'Favorite' : 'Discovery'}
     screenOptions={{
       headerShown: false,
       tabBarStyle: {
@@ -76,6 +72,7 @@ const MainNavigator = () => (
       name="Search"
       component={SearchPageScreen}
       options={({navigation, route}) => ({
+        headerShown: false,
         tabBarIcon: ({focused}) => {
           return (
             <Icon
@@ -121,8 +118,6 @@ const MainNavigator = () => (
 );
 
 const DiscoveryStack = () => {
-  const [selectedItems, setSelectedItems] = useState([]);
-  console.log('Selected:', selectedItems);
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -133,13 +128,6 @@ const DiscoveryStack = () => {
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text>Home,</Text>
               <Text style={{fontWeight: 'bold'}}>Jl. Soekarno Hatte 15A</Text>
-              <SectionedMultiSelect
-                items={items}
-                IconRenderer={Icon}
-                uniqueKey="id"
-                onSelectedItemsChange={setSelectedItems}
-                selectedItems={selectedItems}
-              />
             </View>
           ),
         })}
@@ -152,8 +140,6 @@ const DiscoveryStack = () => {
 };
 
 const RestaurantsStack = () => {
-  const [selectedItems, setSelectedItems] = useState([]);
-
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -165,13 +151,6 @@ const RestaurantsStack = () => {
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text>Home,</Text>
               <Text style={{fontWeight: 'bold'}}>Jl. Soekarno Hatte 15A</Text>
-              <SectionedMultiSelect
-                items={items}
-                IconRenderer={Icon}
-                uniqueKey="id"
-                onSelectedItemsChange={setSelectedItems}
-                selectedItems={selectedItems}
-              />
             </View>
           ),
         })}
@@ -183,10 +162,3 @@ const RestaurantsStack = () => {
 };
 
 export default MainNavigator;
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
