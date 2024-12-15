@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
 import React, {useState} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -15,18 +16,17 @@ import Icon2 from 'react-native-vector-icons/Ionicons';
 import Icon3 from 'react-native-vector-icons/FontAwesome5';
 import {Colors} from '../../constants/colors';
 
-
 // sd
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 const items = [
   {name: 'Cars', id: 1},
   {name: 'Vans', id: 2},
-  
 ];
 
 const MainNavigator = () => (
   <Tab.Navigator
+    // initialRouteName="Restaurants"
     screenOptions={{
       headerShown: false,
       tabBarStyle: {
@@ -133,7 +133,7 @@ const DiscoveryStack = () => {
           headerLeft: () => (
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text>Home,</Text>
-              <Text>Jl. Soekarno Hatte 15A</Text>
+              <Text style={{fontWeight: 'bold'}}>Jl. Soekarno Hatte 15A</Text>
               <SectionedMultiSelect
                 items={items}
                 IconRenderer={Icon}
@@ -152,12 +152,36 @@ const DiscoveryStack = () => {
   );
 };
 
-const RestaurantsStack = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="RestaurantsPage" component={Resturantscreen} />
-    <Stack.Screen name="Restaurant" component={Resturantscreen} />
-  </Stack.Navigator>
-);
+const RestaurantsStack = () => {
+  const [selectedItems, setSelectedItems] = useState([]);
+
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="RestaurantsPage"
+        options={({route}) => ({
+          title: '',
+          headerShadowVisible: false,
+          headerLeft: () => (
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <Text>Home,</Text>
+              <Text style={{fontWeight: 'bold'}}>Jl. Soekarno Hatte 15A</Text>
+              <SectionedMultiSelect
+                items={items}
+                IconRenderer={Icon}
+                uniqueKey="id"
+                onSelectedItemsChange={setSelectedItems}
+                selectedItems={selectedItems}
+              />
+            </View>
+          ),
+        })}
+        component={Resturantscreen}
+      />
+      <Stack.Screen name="Restaurant" component={Resturantscreen} />
+    </Stack.Navigator>
+  );
+};
 
 export default MainNavigator;
 const styles = StyleSheet.create({

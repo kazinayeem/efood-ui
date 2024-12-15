@@ -48,7 +48,11 @@ export default function DiscoveryScreen() {
           </TouchableOpacity>
         </View>
         <View style={{width: 0, height: 0, marginBottom: 15}} />
-        <ItemSlider data={foodItems} discount={true} />
+        <ItemSlider
+          Positionhorizontal={true}
+          data={foodItems}
+          discount={true}
+        />
 
         {/* end */}
 
@@ -80,7 +84,12 @@ export default function DiscoveryScreen() {
         </View>
       </View>
       <View style={{width: 0, height: 0, marginBottom: 15}} />
-      <ItemSlider data={foodItems} discount={false} w={50} />
+      <ItemSlider
+        Positionhorizontal={false}
+        data={foodItems}
+        discount={false}
+        w={50}
+      />
       {/* end */}
     </ScrollView>
   );

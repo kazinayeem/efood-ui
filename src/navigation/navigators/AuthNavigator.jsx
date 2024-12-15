@@ -17,7 +17,7 @@ const AuthNavigator = () => (
       presentation: 'transparentModal',
       animation: 'fade',
     }}
-    initialRouteName="Splash"
+    initialRouteName="MainNavigator"
   >
     <AuthStack.Screen name="Splash" component={SplashScreen} />
     <AuthStack.Screen name="Welcome" component={WelcomeScreen} />

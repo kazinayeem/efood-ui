@@ -15,9 +15,10 @@ const COLORS = {
 const generateRandomDiscount = () =>
   `${Math.round(Math.random() * 15)}% off delivery`;
 
-function ItemSlider({w, h, data, discount}) {
+function ItemSlider({data, discount, Positionhorizontal}) {
   const renderItem = ({item}) => (
-    <View style={[styles.itemContainer]}>
+    <View
+      style={[styles.itemContainer, {height: Positionhorizontal ? 200 : 210}]}>
       {/* Image and Discount Badge */}
       <View style={styles.imageWrapper}>
         <Image
@@ -54,12 +55,16 @@ function ItemSlider({w, h, data, discount}) {
         </View>
       </View>
     </View>
-  ); 
+  );
 
   return (
-    <View style={[styles.sliderContainer]}>
+    <View
+      style={[
+        styles.sliderContainer,
+        {height: Positionhorizontal ? 210 : '100%'},
+      ]}>
       <FlashList
-        horizontal
+        horizontal={Positionhorizontal}
         data={data}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
@@ -75,6 +80,7 @@ const styles = StyleSheet.create({
   sliderContainer: {
     width: '100%',
     height: 210,
+    marginBottom: 10,
   },
   itemContainer: {
     justifyContent: 'center',
@@ -89,10 +95,11 @@ const styles = StyleSheet.create({
   },
   imageWrapper: {
     width: '100%',
+    height: 140,
   },
   itemImage: {
     width: '100%',
-    height: 140,
+    height: '100%',
     borderRadius: 10,
   },
   discountBadge: {
