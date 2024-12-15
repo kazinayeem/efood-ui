@@ -49,7 +49,9 @@ export default function FavoriteScreen() {
           entering={BounceIn}
           exiting={BounceOut}
           style={[styles.btn, isActive === 2 && styles.activebtn]}>
-          <TouchableOpacity onPress={() => changeActivebtn(2)}>
+          <TouchableOpacity
+            style={[styles.btn, isActive === 2 && styles.activebtn]}
+            onPress={() => changeActivebtn(2)}>
             <Text style={[styles.text, isActive === 2 && styles.activetext]}>
               Restaurant
             </Text>

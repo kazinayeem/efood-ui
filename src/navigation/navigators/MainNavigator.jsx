@@ -4,7 +4,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SearchPageScreen from '../../screens/Home/SearchPageScreen';
 import FavoriteScreen from '../../screens/Home/FavoriteScreen';
-import ProfileScreen from '../../screens/Profile/ProfileScreen';
 import DiscoveryScreen from '../../screens/Home/DiscoveryScreen';
 import FoodDetailsScreen from '../../screens/Home/foodDetails/FoodDetailsScreen';
 import Resturantscreen from '../../screens/Home/resturent/Resturantscreen';
@@ -14,6 +13,7 @@ import Icon1 from 'react-native-vector-icons/SimpleLineIcons';
 import Icon2 from 'react-native-vector-icons/Ionicons';
 import Icon3 from 'react-native-vector-icons/FontAwesome5';
 import {Colors} from '../../constants/colors';
+import OrderNavigator from './OrderNavigator';
 
 // sd
 const Tab = createBottomTabNavigator();
@@ -21,7 +21,7 @@ const Stack = createNativeStackNavigator();
 
 const MainNavigator = () => (
   <Tab.Navigator
-    initialRouteName={__DEV__ ? 'Favorite' : 'Discovery'}
+    initialRouteName={__DEV__ ? 'Profile' : 'Discovery'}
     screenOptions={{
       headerShown: false,
       tabBarStyle: {
@@ -100,7 +100,7 @@ const MainNavigator = () => (
     />
     <Tab.Screen
       name="Profile"
-      component={ProfileScreen}
+      component={OrderNavigator}
       options={({navigation, route}) => ({
         tabBarIcon: ({focused}) => {
           return (

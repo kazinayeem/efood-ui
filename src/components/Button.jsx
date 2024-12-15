@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import {Text, TouchableOpacity, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import {FACEBOOK_LOGO, GOOGLE_LOGO} from '../constants/images';

@@ -7,4 +7,5 @@ export const SLIDER2 = require('../../assets/images/slider2.jpg');
 export const SLIDER3 = require('../../assets/images/slider3.jpg');
 export const SLIDER4 = require('../../assets/images/slider4.jpg');
 export const SLIDER5 = require('../../assets/images/slider5.jpg');
+export const PROFILE_LOGO = require('../../assets/images/profilelogo.png');
 //export const FIRE = require('../../assets/images/fire.png');
