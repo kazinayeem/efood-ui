@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unstable-nested-components */
-import SectionedMultiSelect from 'react-native-sectioned-multi-select';
-import React, {useState} from 'react';
+import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SearchPageScreen from '../../screens/Home/SearchPageScreen';
@@ -9,7 +8,7 @@ import ProfileScreen from '../../screens/Profile/ProfileScreen';
 import DiscoveryScreen from '../../screens/Home/DiscoveryScreen';
 import FoodDetailsScreen from '../../screens/Home/foodDetails/FoodDetailsScreen';
 import Resturantscreen from '../../screens/Home/resturent/Resturantscreen';
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon1 from 'react-native-vector-icons/SimpleLineIcons';
 import Icon2 from 'react-native-vector-icons/Ionicons';
