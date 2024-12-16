@@ -19,7 +19,6 @@ export default function MyCarousel() {
         autoPlay={true}
         data={images}
         scrollAnimationDuration={1000}
-        // onSnapToItem={index => console.log('Current index:', index)}
         renderItem={({index, item}) => (
           <View style={styles.carouselItem}>
             <Image source={item} style={styles.carouselImage} />

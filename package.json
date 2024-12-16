@@ -6,9 +6,10 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "start": "react-native start",
+    "start": "react-native start -- --reset-cache",
     "test": "jest",
-    "setup": "npx react-native-asset"
+    "setup": "npx react-native-asset",
+    "clean": "npm start -- --reset-cache"
   },
   "dependencies": {
     "@react-native-community/blur": "^4.4.1",

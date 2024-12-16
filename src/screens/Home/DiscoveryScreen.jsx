@@ -12,8 +12,13 @@ import HandClap from 'react-native-vector-icons/MaterialCommunityIcons';
 import {SemiBold} from '../../constants/fonts';
 import ItemSlider from '../../components/ItemSlider';
 import {foodItems} from '../../config/data';
+import {useNavigation} from '@react-navigation/native';
 
 export default function DiscoveryScreen() {
+  const {navigate} = useNavigation();
+  const singlePage = data => {
+    navigate('FoodDetails', {product: data});
+  };
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -49,6 +54,7 @@ export default function DiscoveryScreen() {
         </View>
         <View style={{width: 0, height: 0, marginBottom: 15}} />
         <ItemSlider
+          action={singlePage}
           Positionhorizontal={true}
           data={foodItems}
           discount={true}
@@ -88,7 +94,7 @@ export default function DiscoveryScreen() {
         Positionhorizontal={false}
         data={foodItems}
         discount={false}
-        w={50}
+        action={singlePage}
       />
       {/* end */}
     </ScrollView>

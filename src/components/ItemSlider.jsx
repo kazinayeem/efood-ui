@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
 import {FlashList} from '@shopify/flash-list';
 import Star from 'react-native-vector-icons/AntDesign';
 import Time from 'react-native-vector-icons/MaterialIcons';
@@ -15,49 +22,65 @@ const COLORS = {
 const generateRandomDiscount = () =>
   `${Math.round(Math.random() * 15)}% off delivery`;
 
-function ItemSlider({data, discount, Positionhorizontal}) {
-  const renderItem = ({item}) => (
-    <Animated.View
-      entering={FadeIn.duration(1000)}
-      exiting={FadeOut.duration(1000)}
-      style={[styles.itemContainer, {height: Positionhorizontal ? 200 : 210}]}>
-      {/* Image and Discount Badge */}
-      <View style={styles.imageWrapper}>
-        <Image
-          source={{uri: item.image}}
-          style={styles.itemImage}
-          resizeMode="cover"
-        />
-        {discount && (
-          <TouchableOpacity style={styles.discountBadge}>
-            <Text style={styles.discountText}>{generateRandomDiscount()}</Text>
-          </TouchableOpacity>
-        )}
-      </View>
+function ItemSlider({data, discount, Positionhorizontal, action}) {
+  const renderItem = ({item}) => {
+    return (
+      <Pressable
+        onPress={() => {
+          action(item);
+        }}>
+        <Animated.View
+          entering={FadeIn.duration(1000)}
+          exiting={FadeOut.duration(1000)}
+          style={[
+            styles.itemContainer,
+            {height: Positionhorizontal ? 200 : 210},
+          ]}>
+          {/* Image and Discount Badge */}
+          <View style={styles.imageWrapper}>
+            <Image
+              source={{uri: item.image}}
+              style={styles.itemImage}
+              resizeMode="cover"
+            />
+            {discount && (
+              <TouchableOpacity
+                style={styles.discountBadge}
+                onPress={() => {
+                  action(item);
+                }}>
+                <Text style={styles.discountText}>
+                  {generateRandomDiscount()}
+                </Text>
+              </TouchableOpacity>
+            )}
+          </View>
 
-      {/* Item Info */}
-      <Text style={[styles.text, styles.itemName]}>{item.name}</Text>
-      <Text style={[styles.text, styles.itemDescription]}>
-        {item.description.substring(0, 40)}...
-      </Text>
+          {/* Item Info */}
+          <Text style={[styles.text, styles.itemName]}>{item.name}</Text>
+          <Text style={[styles.text, styles.itemDescription]}>
+            {item.description.substring(0, 40)}...
+          </Text>
 
-      {/* Item Details */}
-      <View style={styles.itemDetails}>
-        <View style={styles.detailRow}>
-          <Car name="truck-delivery" size={15} color={COLORS.orange} />
-          <Text style={styles.detailText}>${item.price}</Text>
-        </View>
-        <View style={styles.detailRow}>
-          <Text style={styles.detailText}>40-50min</Text>
-          <Time name="alarm" size={15} color={COLORS.orange} />
-        </View>
-        <View style={styles.detailRow}>
-          <Text style={styles.detailText}>{item.rating}</Text>
-          <Star name="star" size={15} color={COLORS.orange} />
-        </View>
-      </View>
-    </Animated.View>
-  );
+          {/* Item Details */}
+          <View style={styles.itemDetails}>
+            <View style={styles.detailRow}>
+              <Car name="truck-delivery" size={15} color={COLORS.orange} />
+              <Text style={styles.detailText}>${item.price}</Text>
+            </View>
+            <View style={styles.detailRow}>
+              <Text style={styles.detailText}>40-50min</Text>
+              <Time name="alarm" size={15} color={COLORS.orange} />
+            </View>
+            <View style={styles.detailRow}>
+              <Text style={styles.detailText}>{item.rating}</Text>
+              <Star name="star" size={15} color={COLORS.orange} />
+            </View>
+          </View>
+        </Animated.View>
+      </Pressable>
+    );
+  };
 
   return (
     <View
