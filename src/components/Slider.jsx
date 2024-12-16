@@ -4,7 +4,6 @@ import {
   Image,
   Dimensions,
   StyleSheet,
-  ActivityIndicator,
 } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import {DEFAULT} from '../constants/images';
