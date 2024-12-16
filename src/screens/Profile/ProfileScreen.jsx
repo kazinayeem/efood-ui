@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons'; // You can choose different icon libraries
 
 // Sample local image for PROFILE_LOGO, replace this with your actual image path
 import {PROFILE_LOGO} from '../../constants/images';
 import {useNavigation} from '@react-navigation/native';
+import {AppContext} from '../../context/AppContext';
 
 export default function ProfileScreen() {
   const {navigate} = useNavigation();
-
+  const {logOut} = useContext(AppContext);
   const handlePress = item => {
     console.log(`${item} pressed`);
     // You can add navigation or other logic here
@@ -91,7 +92,9 @@ export default function ProfileScreen() {
       {/* Log Out Button */}
       <TouchableOpacity
         style={styles.logoutContainer}
-        onPress={() => handlePress('Log out')}>
+        onPress={() => {
+          logOut();
+        }}>
         <Text style={styles.logoutButton}>Log out</Text>
       </TouchableOpacity>
     </View>

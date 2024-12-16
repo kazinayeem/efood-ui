@@ -17,7 +17,7 @@ const AuthNavigator = () => (
       headerShown: false,
       animation: 'slide_from_left',
     }}
-    initialRouteName={'MainNavigator'}
+   // initialRouteName={'MainNavigator'}
     >
     <AuthStack.Screen name="Splash" component={SplashScreen} />
     <AuthStack.Screen name="Welcome" component={WelcomeScreen} />

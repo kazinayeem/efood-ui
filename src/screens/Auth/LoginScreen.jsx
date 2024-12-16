@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   BigButton,
   LoginWithFaceBook,
@@ -11,8 +11,10 @@ import {styles as st} from './WelcomeScreen';
 import {TextInputAuth} from '../../components/TextInput';
 import {Colors} from '../../constants/colors';
 import {SemiBold} from '../../constants/fonts';
+import {AppContext} from '../../context/AppContext';
 export default function LoginScreen() {
   const {navigate} = useNavigation();
+  const {logIn} = useContext(AppContext);
   return (
     <View style={styles.container}>
       <View style={styles.allsectioncontainer}>
@@ -35,12 +37,20 @@ export default function LoginScreen() {
             bordercolor={'#abacb6'}
           />
 
-          <TouchableOpacity onPress={() => navigate('ResetPassword')}>
+          <TouchableOpacity
+            onPress={() => {
+              logIn();
+            //  navigate('ResetPassword');
+            }}>
             <Text style={styles.fptext}>Forgot Password?</Text>
           </TouchableOpacity>
         </View>
 
-        <BigButton title={'Login'} action={navigate} actionTitle={'MainNavigator'} />
+        <BigButton
+          title={'Login'}
+          action={navigate}
+          actionTitle={'MainNavigator'}
+        />
         <View style={st.signinsection}>
           <Text>Dont't Have an account ?</Text>
           <TouchableOpacity onPress={() => navigate('SignUp')}>

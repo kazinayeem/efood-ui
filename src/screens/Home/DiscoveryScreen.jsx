@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import Slider from '../../components/Slider';
 import FireIcon from 'react-native-vector-icons/Fontisto';
 import HandClap from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -13,8 +13,11 @@ import {SemiBold} from '../../constants/fonts';
 import ItemSlider from '../../components/ItemSlider';
 import {foodItems} from '../../config/data';
 import {useNavigation} from '@react-navigation/native';
+import {AppContext} from '../../context/AppContext';
 
 export default function DiscoveryScreen() {
+  
+
   const {navigate} = useNavigation();
   const singlePage = data => {
     navigate('FoodDetails', {product: data});

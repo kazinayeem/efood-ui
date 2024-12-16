@@ -38,7 +38,7 @@ const MainNavigator = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName={'Discovery'}
+      //initialRouteName={'Discovery'}
       screenOptions={{
         headerShown: false,
         tabBarStyle,
