@@ -35,7 +35,7 @@
 		2591E00E275448B0A008B0A3 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D1F7258AB03489A8663DA7F /* splash.png */; };
 		3802D7E0EFF84F809EABC75C /* welcomescreenbackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EFA3DE62DABE43E0BB3ACA91 /* welcomescreenbackground.jpg */; };
 		976853CCC7244A569A6EFE81 /* profilelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EF37D4CE394D5EBACDD3F4 /* profilelogo.png */; };
-		1F8869D78CAD4353B65966AF /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E228CA4B4F841E0AA382C87 /* default.jpg */; };
+		D9E0197F48B249CD9673673D /* defaultsliderimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5105B1627906474999765B15 /* defaultsliderimage.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +88,7 @@
 		0D1F7258AB03489A8663DA7F /* splash.png */ = {isa = PBXFileReference; name = "splash.png"; path = "../assets/images/splash.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		EFA3DE62DABE43E0BB3ACA91 /* welcomescreenbackground.jpg */ = {isa = PBXFileReference; name = "welcomescreenbackground.jpg"; path = "../assets/images/welcomescreenbackground.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E1EF37D4CE394D5EBACDD3F4 /* profilelogo.png */ = {isa = PBXFileReference; name = "profilelogo.png"; path = "../assets/images/profilelogo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3E228CA4B4F841E0AA382C87 /* default.jpg */ = {isa = PBXFileReference; name = "default.jpg"; path = "../assets/images/default.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5105B1627906474999765B15 /* defaultsliderimage.jpg */ = {isa = PBXFileReference; name = "defaultsliderimage.jpg"; path = "../assets/images/defaultsliderimage.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +219,7 @@
 				0D1F7258AB03489A8663DA7F /* splash.png */,
 				EFA3DE62DABE43E0BB3ACA91 /* welcomescreenbackground.jpg */,
 				E1EF37D4CE394D5EBACDD3F4 /* profilelogo.png */,
-				3E228CA4B4F841E0AA382C87 /* default.jpg */,
+				5105B1627906474999765B15 /* defaultsliderimage.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 				2591E00E275448B0A008B0A3 /* splash.png in Resources */,
 				3802D7E0EFF84F809EABC75C /* welcomescreenbackground.jpg in Resources */,
 				976853CCC7244A569A6EFE81 /* profilelogo.png in Resources */,
-				1F8869D78CAD4353B65966AF /* default.jpg in Resources */,
+				D9E0197F48B249CD9673673D /* defaultsliderimage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

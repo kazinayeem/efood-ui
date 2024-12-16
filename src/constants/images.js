@@ -8,5 +8,5 @@ export const WELCOME_BG = require('../../assets/images/welcomescreenbackground.j
 // export const SLIDER4 = require('../../assets/images/slider4.jpg');
 // export const SLIDER5 = require('../../assets/images/slider5.jpg');
 export const PROFILE_LOGO = require('../../assets/images/profilelogo.png');
-export const DEFAULT = require('../../assets/images/default.jpg');
+export const DEFAULT = require('../../assets/images/defaultsliderimage.jpg');
 //export const FIRE = require('../../assets/images/fire.png');
