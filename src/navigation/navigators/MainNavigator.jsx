@@ -2,7 +2,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import SearchPageScreen from '../../screens/Home/SearchPageScreen';
-import FavoriteScreen from '../../screens/Home/FavoriteScreen';
 import {TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon1 from 'react-native-vector-icons/SimpleLineIcons';
@@ -13,6 +12,7 @@ import OrderNavigator from './OrderNavigator';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 import RestaurantsStack from './ResturentNavigator';
 import DiscoveryStack from './DiscoveryStack';
+import FavoriteNavigation from './FavoriteNavigation';
 
 // s
 const Tab = createBottomTabNavigator();
@@ -64,7 +64,8 @@ const MainNavigator = () => {
       <Tab.Screen
         name="Restaurants"
         component={RestaurantsStack}
-        options={({navigation}) => ({
+        options={({route}) => ({
+          tabBarStyle: getTabBarStyle(route),
           tabBarIcon: ({focused}) => {
             return (
               <Icon2
@@ -94,8 +95,9 @@ const MainNavigator = () => {
       />
       <Tab.Screen
         name="Favorite"
-        component={FavoriteScreen}
-        options={({navigation}) => ({
+        component={FavoriteNavigation}
+        options={({route}) => ({
+          tabBarStyle: getTabBarStyle(route),
           tabBarIcon: ({focused}) => {
             return (
               <Icon

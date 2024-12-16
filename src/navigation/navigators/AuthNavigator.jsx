@@ -6,7 +6,6 @@ import LoginScreen from '../../screens/Auth/LoginScreen';
 import SignUpScreen from '../../screens/Auth/SignUpScreen';
 import ResetPasswordScreen from '../../screens/Auth/ResetPasswordScreen';
 import VerificationCodeScreen from '../../screens/Auth/VerificationCodeScreen';
-import MainNavigator from './MainNavigator';
 
 const AuthStack = createNativeStackNavigator();
 // const dev = __DEV__;
@@ -28,7 +27,7 @@ const AuthNavigator = () => (
       name="VerificationCode"
       component={VerificationCodeScreen}
     />
-    <AuthStack.Screen name="MainNavigator" component={MainNavigator} />
+    {/* <AuthStack.Screen name="MainNavigator" component={MainNavigator} /> */}
   </AuthStack.Navigator>
 );
 

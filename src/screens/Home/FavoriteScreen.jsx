@@ -7,10 +7,14 @@ import ItemSlider from '../../components/ItemSlider';
 import {categories, foodItems} from '../../config/data';
 import ShowCategory from '../../components/ShowCategory';
 import {Bold} from '../../constants/fonts';
+import {useNavigation} from '@react-navigation/native';
 
 export default function FavoriteScreen() {
   const [isActive, setisActive] = useState(1);
-
+  const {navigate} = useNavigation();
+  const singlePage = data => {
+    navigate('FoodDetails', {product: data});
+  };
   const changeActivebtn = d => {
     setisActive(d);
   };
@@ -64,6 +68,7 @@ export default function FavoriteScreen() {
           Positionhorizontal={false}
           data={foodItems}
           discount={false}
+          action={singlePage}
         />
       )}
 

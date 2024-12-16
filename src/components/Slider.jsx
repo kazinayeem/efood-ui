@@ -1,14 +1,25 @@
 import React from 'react';
-import {View, Image, Dimensions, StyleSheet} from 'react-native';
+import {
+  View,
+  Image,
+  Dimensions,
+  StyleSheet,
+  ActivityIndicator,
+} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import {SLIDER1, SLIDER2, SLIDER3, SLIDER4, SLIDER5} from '../constants/images'; // Adjust image paths
+import {DEFAULT} from '../constants/images';
 
 export default function MyCarousel() {
   const width = Dimensions.get('window').width; // Get screen width
 
   // Array of image sources
-  const images = [SLIDER1, SLIDER2, SLIDER3, SLIDER4, SLIDER5];
 
+  const imageLink = [
+    'https://res.cloudinary.com/daq7v0wmf/image/upload/v1734326197/dev/fwrkxmrwom4fpn9wqct3.jpg',
+    'https://res.cloudinary.com/daq7v0wmf/image/upload/v1734326173/dev/bpnuub5xfrbhfu8r5t63.jpg',
+    'https://res.cloudinary.com/daq7v0wmf/image/upload/v1734326187/dev/eng5nsqizpeujbeoxv9i.jpg',
+    'https://res.cloudinary.com/daq7v0wmf/image/upload/v1734326204/dev/hk7canfapxwmrx4vjiul.jpg',
+  ];
   return (
     <View style={styles.container}>
       <Carousel
@@ -17,11 +28,15 @@ export default function MyCarousel() {
         width={width}
         height={width / 2}
         autoPlay={true}
-        data={images}
+        data={imageLink}
         scrollAnimationDuration={1000}
         renderItem={({index, item}) => (
           <View style={styles.carouselItem}>
-            <Image source={item} style={styles.carouselImage} />
+            <Image
+              defaultSource={DEFAULT}
+              source={{uri: item}}
+              style={styles.carouselImage}
+            />
           </View>
         )}
       />

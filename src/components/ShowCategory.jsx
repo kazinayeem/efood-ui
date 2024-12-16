@@ -3,16 +3,11 @@ import React from 'react';
 import {FlashList} from '@shopify/flash-list';
 import {Bold, Regular} from '../constants/fonts';
 import {Colors} from '../constants/colors';
-import Animated, {
-  FadeIn,
-  FadeInLeft,
-  FadeInRight,
-  FadeOut,
-} from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 
 export default function ShowCategory({data, header = true}) {
   return (
-    <Animated.View entering={FadeIn} exiting={FadeOut} style={styles.container}>
+    <Animated.View  style={styles.container}>
       {header && (
         <View style={styles.header}>
           <Text style={styles.headertext}>Categories</Text>
@@ -32,8 +27,6 @@ export default function ShowCategory({data, header = true}) {
         renderItem={({item, index}) => {
           return (
             <Animated.View
-              entering={FadeInLeft.duration(1000)}
-              exiting={FadeInRight.duration(1000)}
               key={index}
               style={styles.itemcontainer}>
               <View style={styles.imagecontainer}>

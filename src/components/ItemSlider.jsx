@@ -12,7 +12,7 @@ import Star from 'react-native-vector-icons/AntDesign';
 import Time from 'react-native-vector-icons/MaterialIcons';
 import Car from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Bold, Regular} from '../constants/fonts';
-import Animated, {FadeIn, FadeOut} from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 const COLORS = {
   orange: '#fe8800',
   background: '#f9f9f9',
@@ -30,8 +30,6 @@ function ItemSlider({data, discount, Positionhorizontal, action}) {
           action(item);
         }}>
         <Animated.View
-          entering={FadeIn.duration(1000)}
-          exiting={FadeOut.duration(1000)}
           style={[
             styles.itemContainer,
             {height: Positionhorizontal ? 200 : 210},
