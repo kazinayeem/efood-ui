@@ -8,6 +8,7 @@ import MainNavigator from './src/navigation/navigators/MainNavigator';
 import OrderNavigator from './src/navigation/navigators/OrderNavigator';
 import {AppContext, AppProvider} from './src/context/AppContext';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
 
 const RootStack = createNativeStackNavigator();
 
@@ -24,7 +25,14 @@ export default function App() {
 }
 
 const RootNavigator = () => {
-  const {auth} = useContext(AppContext);
+  const {auth, loading} = useContext(AppContext);
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
+    );
+  }
 
   return (
     <RootStack.Navigator screenOptions={{headerShown: false}}>
@@ -39,3 +47,11 @@ const RootNavigator = () => {
     </RootStack.Navigator>
   );
 };
+
+const styles = StyleSheet.create({
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

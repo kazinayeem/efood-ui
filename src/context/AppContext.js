@@ -7,8 +7,6 @@ export const AppProvider = ({children}) => {
   const [auth, setAuth] = useState(false);
   const [loading, setLoading] = useState(true); // Loading state while checking storage
 
-  console.log(loading);
-
   useEffect(() => {
     const loadAuthState = async () => {
       try {
@@ -26,10 +24,7 @@ export const AppProvider = ({children}) => {
     loadAuthState();
   }, []);
 
-  // Function to log in
   const logIn = async () => {
-    console.log('login');
-
     try {
       await AsyncStorage.setItem('auth', 'true'); // Save auth state
       setAuth(true);
@@ -40,7 +35,6 @@ export const AppProvider = ({children}) => {
 
   // Function to log out
   const logOut = async () => {
-    console.log('logout');
     try {
       await AsyncStorage.removeItem('auth'); // Remove auth state
       setAuth(false);
@@ -50,7 +44,7 @@ export const AppProvider = ({children}) => {
   };
 
   return (
-    <AppContext.Provider value={{auth, logIn, logOut}}>
+    <AppContext.Provider value={{auth, logIn, logOut, loading}}>
       {children}
     </AppContext.Provider>
   );

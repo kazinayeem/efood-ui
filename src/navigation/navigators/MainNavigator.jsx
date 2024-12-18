@@ -15,6 +15,7 @@ import DiscoveryStack from './DiscoveryStack';
 //import FavoriteNavigation from './FavoriteNavigation';
 import FavoriteScreen from '../../screens/Home/FavoriteScreen';
 
+
 // s
 const Tab = createBottomTabNavigator();
 
