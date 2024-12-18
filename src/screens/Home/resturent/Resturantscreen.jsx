@@ -10,7 +10,12 @@ export default function Resturantscreen() {
   const category = categories;
   const {navigate} = useNavigation();
   const singlePage = data => {
-    navigate('FoodDetails', {product: data});
+    navigate('Discovery', {
+      screen: 'FoodDetails',
+      params: {product: data},
+    });
+
+    // navigate('FoodDetails', {product: data});
   };
   return (
     <ScrollView style={styles.container}>

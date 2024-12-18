@@ -39,7 +39,7 @@ function ItemSlider({data, discount, Positionhorizontal, action}) {
             <Image
               source={{uri: item.image}}
               style={styles.itemImage}
-              resizeMode="cover"
+              resizeMode="contain"
             />
             {discount && (
               <TouchableOpacity

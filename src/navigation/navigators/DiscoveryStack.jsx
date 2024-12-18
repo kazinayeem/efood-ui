@@ -24,7 +24,11 @@ const DiscoveryStack = () => {
         name="DiscoveryPage"
         component={DiscoveryScreen}
       />
-      <Stack.Screen name="FoodDetails" component={FoodDetailsScreen} />
+      <Stack.Screen
+        name="FoodDetails"
+        component={FoodDetailsScreen}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

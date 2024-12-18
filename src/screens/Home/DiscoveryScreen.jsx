@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import React, {useContext} from 'react';
+import React from 'react';
 import Slider from '../../components/Slider';
 import FireIcon from 'react-native-vector-icons/Fontisto';
 import HandClap from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -21,7 +21,6 @@ export default function DiscoveryScreen() {
     navigate('FoodDetails', {product: data});
   };
   const tap = Gesture.Tap();
- 
 
   return (
     <GestureDetector gesture={tap}>

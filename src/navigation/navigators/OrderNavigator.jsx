@@ -7,7 +7,9 @@ import ProfileScreen from '../../screens/Profile/ProfileScreen';
 const OrderStack = createNativeStackNavigator();
 
 const OrderNavigator = () => (
-  <OrderStack.Navigator screenOptions={{headerShown: false}}>
+  <OrderStack.Navigator
+    initialRouteName="MainProfile"
+    screenOptions={{headerShown: false}}>
     <OrderStack.Screen name="MainProfile" component={ProfileScreen} />
     <OrderStack.Screen
       name="Order"

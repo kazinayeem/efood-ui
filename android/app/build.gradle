@@ -128,10 +128,24 @@ dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
     implementation project(':react-native-vector-icons')
+    implementation project(':react-native-geolocation-service')
+    implementation "com.google.android.gms:play-services-location:21.0.1"
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor
     }
+
+//   implementation project(':react-native-onesignal') {
+//     exclude group: 'com.google.android.gms'
+// }
+
+//    implementation project(':react-native-maps') {
+//     exclude group: 'com.google.android.gms'
+// }
+
+    // implementation 'com.google.android.gms:play-services-base:17.0.0'
+    // implementation 'com.google.android.gms:play-services-location:17.0.0'
+    // implementation 'com.google.android.gms:play-services-maps:17.0.0'
 }

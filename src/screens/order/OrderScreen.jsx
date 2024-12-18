@@ -7,12 +7,14 @@ import OrderItem from '../../components/OrderItem';
 import ShowCategory from '../../components/ShowCategory';
 import {useNavigation} from '@react-navigation/native';
 
-export default function OrderScreen() {
+export default function OrderScreen(props) {
+  const {id, image, name, price} = props.route.params.product;
+
   const {navigate} = useNavigation();
   return (
     <View style={styles.container}>
       {/* cart */}
-      <OrderItem />
+      {/* <OrderItem /> */}
       <View
         style={{
           width: '100%',
@@ -22,7 +24,7 @@ export default function OrderScreen() {
           marginBlock: 5,
         }}
       />
-      <OrderItem />
+      <OrderItem id={id} name={name} image={image} price={price} key={id} />
       <View
         style={{
           width: '100%',
@@ -34,7 +36,7 @@ export default function OrderScreen() {
       />
       <View style={styles.totalsection}>
         <Text style={styles.totaltext}>Total</Text>
-        <Text style={styles.pricetext}>$12.70</Text>
+        <Text style={styles.pricetext}>$ {price}</Text>
       </View>
 
       <Text>Recommendations</Text>
@@ -44,8 +46,8 @@ export default function OrderScreen() {
       <TouchableOpacity
         style={styles.checkoutbtn}
         onPress={() => navigate('DeliveryMap')}>
-        <Text style={styles.btntext}>Go TO CheckOut</Text>
-        <Text style={styles.btntext}>$18.60</Text>
+        <Text style={styles.btntext}>Go To CheckOut</Text>
+        <Text style={styles.btntext}>$ {price}</Text>
       </TouchableOpacity>
     </View>
   );

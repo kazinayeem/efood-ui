@@ -12,7 +12,8 @@ import OrderNavigator from './OrderNavigator';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 import RestaurantsStack from './ResturentNavigator';
 import DiscoveryStack from './DiscoveryStack';
-import FavoriteNavigation from './FavoriteNavigation';
+//import FavoriteNavigation from './FavoriteNavigation';
+import FavoriteScreen from '../../screens/Home/FavoriteScreen';
 
 // s
 const Tab = createBottomTabNavigator();
@@ -48,7 +49,7 @@ const MainNavigator = () => {
       <Tab.Screen
         name="Discovery"
         component={DiscoveryStack}
-        options={({navigation, route}) => ({
+        options={({route}) => ({
           tabBarStyle: getTabBarStyle(route),
           tabBarIcon: ({focused}) => {
             return (
@@ -95,7 +96,7 @@ const MainNavigator = () => {
       />
       <Tab.Screen
         name="Favorite"
-        component={FavoriteNavigation}
+        component={FavoriteScreen}
         options={({route}) => ({
           tabBarStyle: getTabBarStyle(route),
           tabBarIcon: ({focused}) => {
@@ -111,6 +112,14 @@ const MainNavigator = () => {
       />
       <Tab.Screen
         name="Profile"
+        listeners={({navigation}) => ({
+          tabPress: e => {
+            e.preventDefault();
+            navigation.navigate('Profile', {
+              screen: 'MainProfile',
+            });
+          },
+        })}
         component={OrderNavigator}
         options={({navigation}) => ({
           tabBarStyle: {display: 'none'},

@@ -7,7 +7,7 @@ import AuthNavigator from './src/navigation/navigators/AuthNavigator';
 import MainNavigator from './src/navigation/navigators/MainNavigator';
 import OrderNavigator from './src/navigation/navigators/OrderNavigator';
 import {AppContext, AppProvider} from './src/context/AppContext';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 const RootStack = createNativeStackNavigator();
 

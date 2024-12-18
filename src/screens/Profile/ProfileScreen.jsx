@@ -1,14 +1,10 @@
 import React, {useContext} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons'; // You can choose different icon libraries
-
-// Sample local image for PROFILE_LOGO, replace this with your actual image path
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {PROFILE_LOGO} from '../../constants/images';
-import {useNavigation} from '@react-navigation/native';
 import {AppContext} from '../../context/AppContext';
 
 export default function ProfileScreen() {
-  const {navigate} = useNavigation();
   const {logOut} = useContext(AppContext);
   const handlePress = item => {
     console.log(`${item} pressed`);
@@ -25,8 +21,8 @@ export default function ProfileScreen() {
           style={styles.profileImage}
         />
         {/* User Details */}
-        <Text style={styles.userName}>Katty Berry</Text>
-        <Text style={styles.userEmail}>kattyberry@gmail.com</Text>
+        <Text style={styles.userName}>test user</Text>
+        <Text style={styles.userEmail}>test@gmail.com</Text>
       </View>
 
       {/* Navigation Links */}
@@ -41,7 +37,6 @@ export default function ProfileScreen() {
         <TouchableOpacity
           style={styles.navItem}
           onPress={() => {
-            navigate('Order');
             handlePress('My Orders');
           }}>
           <Icon

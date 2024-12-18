@@ -12,8 +12,13 @@ import {useNavigation} from '@react-navigation/native';
 export default function FavoriteScreen() {
   const [isActive, setisActive] = useState(1);
   const {navigate} = useNavigation();
+
   const singlePage = data => {
-    navigate('FoodDetails', {product: data});
+    navigate('Discovery', {
+      screen: 'FoodDetails',
+      params: {product: data},
+    });
+    // navigate('FoodDetails', {product: data});
   };
   const changeActivebtn = d => {
     setisActive(d);

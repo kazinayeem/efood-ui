@@ -5,9 +5,13 @@ import {Bold, Regular} from '../constants/fonts';
 import {Colors} from '../constants/colors';
 import Animated from 'react-native-reanimated';
 
-export default function ShowCategory({data, header = true}) {
+export default function ShowCategory({
+  data,
+  header = true,
+  isHorizontal = true,
+}) {
   return (
-    <Animated.View  style={styles.container}>
+    <Animated.View style={styles.container}>
       {header && (
         <View style={styles.header}>
           <Text style={styles.headertext}>Categories</Text>
@@ -19,16 +23,14 @@ export default function ShowCategory({data, header = true}) {
 
       <FlashList
         data={data}
-        horizontal
+        horizontal={isHorizontal}
         estimatedItemSize={2000}
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         keyExtractor={item => item.id}
         renderItem={({item, index}) => {
           return (
-            <Animated.View
-              key={index}
-              style={styles.itemcontainer}>
+            <Animated.View key={index} style={styles.itemcontainer}>
               <View style={styles.imagecontainer}>
                 <Image
                   width={'100%'}
@@ -80,6 +82,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderColor: 'black',
     borderWidth: 0.2,
+    alignItems: 'center',
+    marginBottom: 5,
   },
   imagecontainer: {
     backgroundColor: '#ffe7cc',

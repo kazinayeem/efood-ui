@@ -1,16 +1,16 @@
 import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
-import {foodItems} from '../config/data';
 import {Bold, Regular} from '../constants/fonts';
 import {Colors} from '../constants/colors';
 
-export default function OrderItem() {
+export default function OrderItem({name, image, id, price }) {
+ 
   return (
     <View style={styles.container}>
       {/* image container */}
       <View>
         <Image
-          source={{uri: foodItems[0].image}}
+          source={{uri: image}}
           style={styles.image}
           resizeMode="cover"
         />
@@ -18,13 +18,13 @@ export default function OrderItem() {
       {/* 2nd part */}
       <View style={{flexDirection: 'column', justifyContent: 'space-between'}}>
         <View>
-          <Text style={styles.nametext}>{foodItems[0].name}</Text>
+          <Text style={styles.nametext}>{name}</Text>
           <Text style={styles.packingtext}>+ Packing fee</Text>
           <Text style={styles.packingtext}>+ chess</Text>
         </View>
 
         <View style={styles.pricesection}>
-          <Text style={styles.pricetext}>$ {foodItems[0].price}</Text>
+          <Text style={styles.pricetext}>$ {price}</Text>
         </View>
       </View>
       {/* last part */}
